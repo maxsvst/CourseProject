@@ -15,7 +15,10 @@ namespace CourseProj
         public Menu()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -24,7 +27,9 @@ namespace CourseProj
 
         private void incomeButton_Click(object sender, EventArgs e)
         {
-
+            this.Hide();//Обращемся к текущему окну и скрываем его
+            IncomeForm IF = new IncomeForm();
+            IF.Show();
         }
 
         private void walletButton_Click(object sender, EventArgs e)

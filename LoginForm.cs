@@ -20,22 +20,22 @@ namespace CourseProj
 
         private void Login_Click(object sender, EventArgs e)
         {
-            string nameUser = userNameField.Text;
-            string passwordUser = passwordField.Text;
 
-            dataBase DB = new dataBase();
+            if(CheckUserExist())
+                return;
 
-            DataTable table = new DataTable();
+            DB.openConnection();
 
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            if (command.ExecuteNonQuery() == 1)
+            {
+                MessageBox.Show("Аккаунт был создан");
 
-            MySqlCommand command = new MySqlCommand("SELECT * FROM users WHERE login = @nU AND password = @pU", DB.getConnection());
+            }
+            else
+                MessageBox.Show("Аккаунт не был создан");
 
-            command.Parameters.Add("@nU", MySqlDbType.VarChar).Value = nameUser;
-            command.Parameters.Add("@pU", MySqlDbType.VarChar).Value = passwordUser;
+            DB.closeConnection();
 
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
 
             this.Hide();//Обращемся к текущему окну и скрываем его
             Menu M = new Menu();
@@ -95,6 +95,31 @@ namespace CourseProj
         private void createAccountLabel_MouseLeave(object sender, EventArgs e)
         {
             createAccountLabel.ForeColor = Color.Gray;
+        }
+
+        public Boolean CheckUserExist()
+        {
+            DataTable table = new DataTable();
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            dataBase DB = new dataBase();
+            MySqlCommand command = new MySqlCommand("SELECT * FROM users WHERE login = @nU AND password = @pU", DB.getConnection());
+
+            command.Parameters.Add("@nU", MySqlDbType.VarChar).Value = nameUser;
+            command.Parameters.Add("@pU", MySqlDbType.VarChar).Value = passwordUser;
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0)
+            {
+                MessageBox.Show("Такой логин уже существует, введите другой");
+                return true;
+            }
+            else
+
+                return false;
+
         }
     }
 }  

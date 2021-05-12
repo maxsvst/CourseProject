@@ -30,9 +30,9 @@ namespace CourseProj
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.incomeButton = new System.Windows.Forms.Button();
             this.walletsButton = new System.Windows.Forms.Button();
             this.expencesButton = new System.Windows.Forms.Button();
@@ -65,6 +65,7 @@ namespace CourseProj
             // 
             // walletsButton
             // 
+            this.walletsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.walletsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(187)))), ((int)(((byte)(255)))));
             this.walletsButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("walletsButton.BackgroundImage")));
             this.walletsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -84,6 +85,7 @@ namespace CourseProj
             // 
             // expencesButton
             // 
+            this.expencesButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.expencesButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(187)))), ((int)(((byte)(255)))));
             this.expencesButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("expencesButton.BackgroundImage")));
             this.expencesButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -102,6 +104,7 @@ namespace CourseProj
             // 
             // statisticsButton
             // 
+            this.statisticsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.statisticsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(187)))), ((int)(((byte)(255)))));
             this.statisticsButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("statisticsButton.BackgroundImage")));
             this.statisticsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -120,24 +123,26 @@ namespace CourseProj
             // 
             // diagramChart
             // 
+            this.diagramChart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.diagramChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.diagramChart.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.diagramChart.BorderlineWidth = 0;
-            chartArea4.Name = "ChartArea1";
-            this.diagramChart.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            legend4.Title = "Расходы за месяц";
-            legend4.TitleFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.diagramChart.Legends.Add(legend4);
+            chartArea1.Name = "ChartArea1";
+            this.diagramChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            legend1.Title = "Расходы за месяц";
+            legend1.TitleFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.diagramChart.Legends.Add(legend1);
             this.diagramChart.Location = new System.Drawing.Point(299, 0);
             this.diagramChart.Name = "diagramChart";
             this.diagramChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            series4.YValuesPerPoint = 2;
-            this.diagramChart.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.YValuesPerPoint = 2;
+            this.diagramChart.Series.Add(series1);
             this.diagramChart.Size = new System.Drawing.Size(483, 342);
             this.diagramChart.TabIndex = 4;
             this.diagramChart.Text = "chart1";

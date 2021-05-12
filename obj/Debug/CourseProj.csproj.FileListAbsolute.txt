@@ -26,3 +26,4 @@ C:\Users\pomid\Desktop\Учеба\Курсач\CourseProj\CourseProj\obj\Debug\C
 C:\Users\pomid\Desktop\Учеба\Курсач\CourseProj\CourseProj\obj\Debug\CourseProj.csproj.CopyComplete
 C:\Users\pomid\Desktop\Учеба\Курсач\CourseProj\CourseProj\obj\Debug\CourseProj.RegisterForm.resources
 C:\Users\pomid\Desktop\Учеба\Курсач\CourseProj\CourseProj\obj\Debug\CourseProj.Menu.resources
+C:\Users\pomid\Desktop\Учеба\Курсач\CourseProj\CourseProj\obj\Debug\CourseProj.IncomeForm.resources

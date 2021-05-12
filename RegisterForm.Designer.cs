@@ -42,7 +42,6 @@ namespace CourseProj
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.secondPasswordField = new System.Windows.Forms.TextBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.emailField = new System.Windows.Forms.TextBox();
             this.loginLabel = new System.Windows.Forms.Label();
@@ -53,6 +52,7 @@ namespace CourseProj
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.secondPasswordField = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -199,8 +199,8 @@ namespace CourseProj
             // 
             this.panel3.AutoSize = true;
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            this.panel3.Controls.Add(this.pictureBox8);
             this.panel3.Controls.Add(this.secondPasswordField);
+            this.panel3.Controls.Add(this.pictureBox8);
             this.panel3.Controls.Add(this.pictureBox7);
             this.panel3.Controls.Add(this.emailField);
             this.panel3.Controls.Add(this.loginLabel);
@@ -225,19 +225,6 @@ namespace CourseProj
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 10;
             this.pictureBox8.TabStop = false;
-            // 
-            // secondPasswordField
-            // 
-            this.secondPasswordField.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.secondPasswordField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(177)))), ((int)(((byte)(194)))));
-            this.secondPasswordField.Location = new System.Drawing.Point(687, 295);
-            this.secondPasswordField.Margin = new System.Windows.Forms.Padding(6);
-            this.secondPasswordField.Name = "secondPasswordField";
-            this.secondPasswordField.Size = new System.Drawing.Size(337, 48);
-            this.secondPasswordField.TabIndex = 9;
-            this.secondPasswordField.Text = "Повторите пароль";
-            this.secondPasswordField.Enter += new System.EventHandler(this.secondPasswordField_Enter);
-            this.secondPasswordField.Leave += new System.EventHandler(this.secondPasswordField_Leave);
             // 
             // pictureBox7
             // 
@@ -360,6 +347,19 @@ namespace CourseProj
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
+            // 
+            // secondPasswordField
+            // 
+            this.secondPasswordField.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.secondPasswordField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(177)))), ((int)(((byte)(194)))));
+            this.secondPasswordField.Location = new System.Drawing.Point(687, 295);
+            this.secondPasswordField.Margin = new System.Windows.Forms.Padding(6);
+            this.secondPasswordField.Name = "secondPasswordField";
+            this.secondPasswordField.Size = new System.Drawing.Size(337, 48);
+            this.secondPasswordField.TabIndex = 11;
+            this.secondPasswordField.Text = "Повторите пароль";
+            this.secondPasswordField.Enter += new System.EventHandler(this.secondPasswordField_Enter);
+            this.secondPasswordField.Leave += new System.EventHandler(this.secondPasswordField_Leave);
             // 
             // RegisterForm
             // 

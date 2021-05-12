@@ -55,6 +55,26 @@ namespace CourseProj
             }
         }
 
+        private void secondPasswordField_Enter(object sender, EventArgs e)
+        {
+            if (secondPasswordField.Text == "Повторите пароль")
+            {
+                secondPasswordField.UseSystemPasswordChar = true;
+                secondPasswordField.ForeColor = Color.Black;
+                secondPasswordField.Text = "";
+            }
+        }
+
+        private void secondPasswordField_Leave(object sender, EventArgs e)
+        {
+            if (secondPasswordField.Text == "")
+            {
+                secondPasswordField.UseSystemPasswordChar = false;
+                secondPasswordField.ForeColor = Color.Gray;
+                secondPasswordField.Text = "Повторите пароль";
+            }
+        }
+
         private void emailField_Enter(object sender, EventArgs e)
         {
             if (emailField.Text == "Email")
@@ -72,25 +92,7 @@ namespace CourseProj
                 emailField.Text = "Email";
             }
         }
-        private void secondPasswordField_Enter(object sender, EventArgs e)
-        {
-            if (secondPasswordField.Text == "Повторите пароль")
-            {
-                secondPasswordField.UseSystemPasswordChar = true;
-                secondPasswordField.ForeColor = Color.Black;
-                secondPasswordField.Text = "";
-            }
-        }
 
-        private void secondPasswordField_Leave(object sender, EventArgs e)
-        {
-            if (secondPasswordField.Text == "")
-            {
-                secondPasswordField.UseSystemPasswordChar = false;
-                secondPasswordField.ForeColor = Color.Gray;
-                secondPasswordField.Text = "Потворите пароль";
-            }
-        }
         private void registerButton_Click(object sender, EventArgs e)
         {
             if (regUserNameField.Text == "Логин")
