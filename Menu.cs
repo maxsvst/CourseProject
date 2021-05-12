@@ -34,7 +34,7 @@ namespace CourseProj
 
         private void expencesButton_Click(object sender, EventArgs e)
         {
-            //жопа
+            
         }
 
         private void statisticButton_Click(object sender, EventArgs e)
