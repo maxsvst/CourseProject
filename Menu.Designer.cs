@@ -30,9 +30,9 @@ namespace CourseProj
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.incomeButton = new System.Windows.Forms.Button();
             this.walletsButton = new System.Windows.Forms.Button();
             this.expencesButton = new System.Windows.Forms.Button();
@@ -61,6 +61,7 @@ namespace CourseProj
             this.incomeButton.Text = "Доход";
             this.incomeButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.incomeButton.UseVisualStyleBackColor = false;
+            this.incomeButton.Click += new System.EventHandler(this.incomeButton_Click);
             // 
             // walletsButton
             // 
@@ -79,6 +80,7 @@ namespace CourseProj
             this.walletsButton.Text = "Кошельки";
             this.walletsButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.walletsButton.UseVisualStyleBackColor = false;
+            this.walletsButton.Click += new System.EventHandler(this.walletButton_Click);
             // 
             // expencesButton
             // 
@@ -96,6 +98,7 @@ namespace CourseProj
             this.expencesButton.Text = "Расход";
             this.expencesButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.expencesButton.UseVisualStyleBackColor = false;
+            this.expencesButton.Click += new System.EventHandler(this.expencesButton_Click);
             // 
             // statisticsButton
             // 
@@ -113,25 +116,28 @@ namespace CourseProj
             this.statisticsButton.Text = "Статистика";
             this.statisticsButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.statisticsButton.UseVisualStyleBackColor = false;
+            this.statisticsButton.Click += new System.EventHandler(this.statisticButton_Click);
             // 
             // diagramChart
             // 
+            this.diagramChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.diagramChart.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.diagramChart.BorderlineWidth = 0;
-            chartArea3.Name = "ChartArea1";
-            this.diagramChart.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            legend3.Title = "Расходы за месяц";
-            legend3.TitleFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.diagramChart.Legends.Add(legend3);
+            chartArea4.Name = "ChartArea1";
+            this.diagramChart.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            legend4.Title = "Расходы за месяц";
+            legend4.TitleFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.diagramChart.Legends.Add(legend4);
             this.diagramChart.Location = new System.Drawing.Point(299, 0);
             this.diagramChart.Name = "diagramChart";
             this.diagramChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            series3.YValuesPerPoint = 2;
-            this.diagramChart.Series.Add(series3);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            series4.YValuesPerPoint = 2;
+            this.diagramChart.Series.Add(series4);
             this.diagramChart.Size = new System.Drawing.Size(483, 342);
             this.diagramChart.TabIndex = 4;
             this.diagramChart.Text = "chart1";

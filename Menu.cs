@@ -21,5 +21,25 @@ namespace CourseProj
         {
             diagramChart.Series[0].Points.AddXY(Convert.ToDouble(textBox1.Text), Convert.ToDouble(textBox2.Text));
         }
+
+        private void incomeButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void walletButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void expencesButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void statisticButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
