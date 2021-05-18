@@ -46,5 +46,10 @@ namespace CourseProj
         {
             
         }
+
+        private void Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+        }
     }
 }

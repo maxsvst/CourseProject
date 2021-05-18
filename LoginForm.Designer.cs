@@ -99,7 +99,7 @@ namespace CourseProj
             this.loginButton.Location = new System.Drawing.Point(309, 332);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(337, 67);
-            this.loginButton.TabIndex = 3;
+            this.loginButton.TabIndex = 1;
             this.loginButton.Text = "Войти";
             this.loginButton.UseVisualStyleBackColor = false;
             this.loginButton.Click += new System.EventHandler(this.Login_Click);
@@ -112,7 +112,7 @@ namespace CourseProj
             this.userNameField.Margin = new System.Windows.Forms.Padding(6);
             this.userNameField.Name = "userNameField";
             this.userNameField.Size = new System.Drawing.Size(337, 48);
-            this.userNameField.TabIndex = 1;
+            this.userNameField.TabIndex = 3;
             this.userNameField.Text = "Логин";
             this.userNameField.Enter += new System.EventHandler(this.userNameField_Enter);
             this.userNameField.Leave += new System.EventHandler(this.userNameField_Leave);
@@ -144,8 +144,10 @@ namespace CourseProj
             this.ClientSize = new System.Drawing.Size(893, 503);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(911, 550);
+            this.MinimumSize = new System.Drawing.Size(911, 550);
             this.Name = "LoginForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ну как там с деньгами?";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -160,7 +162,7 @@ namespace CourseProj
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox userNameField;
+        public System.Windows.Forms.TextBox userNameField;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.TextBox passwordField;

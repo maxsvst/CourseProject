@@ -41,6 +41,7 @@ namespace CourseProj
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.secondPasswordField = new System.Windows.Forms.TextBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.emailField = new System.Windows.Forms.TextBox();
@@ -52,7 +53,6 @@ namespace CourseProj
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.secondPasswordField = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -216,6 +216,19 @@ namespace CourseProj
             this.panel3.Size = new System.Drawing.Size(1157, 544);
             this.panel3.TabIndex = 5;
             // 
+            // secondPasswordField
+            // 
+            this.secondPasswordField.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.secondPasswordField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(177)))), ((int)(((byte)(194)))));
+            this.secondPasswordField.Location = new System.Drawing.Point(687, 295);
+            this.secondPasswordField.Margin = new System.Windows.Forms.Padding(6);
+            this.secondPasswordField.Name = "secondPasswordField";
+            this.secondPasswordField.Size = new System.Drawing.Size(337, 48);
+            this.secondPasswordField.TabIndex = 11;
+            this.secondPasswordField.Text = "Повторите пароль";
+            this.secondPasswordField.Enter += new System.EventHandler(this.secondPasswordField_Enter);
+            this.secondPasswordField.Leave += new System.EventHandler(this.secondPasswordField_Leave);
+            // 
             // pictureBox8
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
@@ -348,19 +361,6 @@ namespace CourseProj
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
             // 
-            // secondPasswordField
-            // 
-            this.secondPasswordField.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.secondPasswordField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(177)))), ((int)(((byte)(194)))));
-            this.secondPasswordField.Location = new System.Drawing.Point(687, 295);
-            this.secondPasswordField.Margin = new System.Windows.Forms.Padding(6);
-            this.secondPasswordField.Name = "secondPasswordField";
-            this.secondPasswordField.Size = new System.Drawing.Size(337, 48);
-            this.secondPasswordField.TabIndex = 11;
-            this.secondPasswordField.Text = "Повторите пароль";
-            this.secondPasswordField.Enter += new System.EventHandler(this.secondPasswordField_Enter);
-            this.secondPasswordField.Leave += new System.EventHandler(this.secondPasswordField_Leave);
-            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -369,8 +369,10 @@ namespace CourseProj
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(1175, 591);
+            this.MinimumSize = new System.Drawing.Size(1175, 591);
             this.Name = "RegisterForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ну как там с деньгами?";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

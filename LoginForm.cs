@@ -18,30 +18,6 @@ namespace CourseProj
             InitializeComponent();
         }
 
-        private void Login_Click(object sender, EventArgs e)
-        {
-
-            if(CheckUserExist())
-                return;
-
-            DB.openConnection();
-
-            if (command.ExecuteNonQuery() == 1)
-            {
-                MessageBox.Show("Аккаунт был создан");
-
-            }
-            else
-                MessageBox.Show("Аккаунт не был создан");
-
-            DB.closeConnection();
-
-
-            this.Hide();//Обращемся к текущему окну и скрываем его
-            Menu M = new Menu();
-            M.Show();
-        }
-
         private void userNameField_Enter(object sender, EventArgs e)
         {
             if (userNameField.Text == "Логин")
@@ -97,29 +73,36 @@ namespace CourseProj
             createAccountLabel.ForeColor = Color.Gray;
         }
 
-        public Boolean CheckUserExist()
+        public void Login_Click(object sender, EventArgs e)
         {
+            string userLogin = userNameField.Text;
+
             DataTable table = new DataTable();
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase DB = new dataBase();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM users WHERE login = @nU AND password = @pU", DB.getConnection());
-
-            command.Parameters.Add("@nU", MySqlDbType.VarChar).Value = nameUser;
-            command.Parameters.Add("@pU", MySqlDbType.VarChar).Value = passwordUser;
+            MySqlCommand command = new MySqlCommand("SELECT * FROM users WHERE login = @nU and password = @pF", DB.getConnection());
+            command.Parameters.Add("@pF", MySqlDbType.VarChar).Value = passwordField.Text;
+            command.Parameters.Add("@nU", MySqlDbType.VarChar).Value = userNameField.Text;
 
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
+            DB.openConnection();
             if (table.Rows.Count > 0)
             {
-                MessageBox.Show("Такой логин уже существует, введите другой");
-                return true;
+                this.Hide();//Обращемся к текущему окну и скрываем его
+                Menu M = new Menu();
+                M.Show();
+                DB.closeConnection();
             }
             else
+                MessageBox.Show("Хуйня");
+        }
 
-                return false;
-
+        public string getUserId()
+        {
+            return userNameField.Text;
         }
     }
 }  
