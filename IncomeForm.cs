@@ -61,9 +61,6 @@ namespace CourseProj
         {
             dataBase DB = new dataBase();
 
-            MySqlCommand getIdCommand = new MySqlCommand("SELECT 'user_id' FROM users WHERE 'login' = @login");
-            getIdCommand.Parameters.Add("@login", MySqlDbType.VarChar).Value = LoginForm. ;
-
             MySqlCommand command = new MySqlCommand("INSERT INTO `operations` (`money_type`, `type`, `sum`, `date`, `category`, `comment`) VALUES (@money_type, @type, @sum, @date, @category, @comment);", DB.getConnection());
 
             if (cardCheck.Checked == true)

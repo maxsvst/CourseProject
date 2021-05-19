@@ -8,6 +8,25 @@ using System.Threading.Tasks;
 
 namespace CourseProj
 {
+    public class User
+    {
+        public int id;
+        public string login;
+        public string email;
+        public string password;
+        private static User _applicationUser;
+        public static User applicationUser
+        {
+            get
+            {
+                if (_applicationUser == null)
+                    _applicationUser = new User();
+                return _applicationUser;
+            }
+        }
+        private User() { }
+    }
+
     //----------Классы денежных опреаций----------
     class Operation
     {

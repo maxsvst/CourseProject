@@ -75,6 +75,7 @@ namespace CourseProj
 
         public void Login_Click(object sender, EventArgs e)
         {
+            
             string userLogin = userNameField.Text;
 
             DataTable table = new DataTable();
@@ -85,24 +86,22 @@ namespace CourseProj
             command.Parameters.Add("@pF", MySqlDbType.VarChar).Value = passwordField.Text;
             command.Parameters.Add("@nU", MySqlDbType.VarChar).Value = userNameField.Text;
 
+            
             adapter.SelectCommand = command;
             adapter.Fill(table);
-
             DB.openConnection();
-            if (table.Rows.Count > 0)
+            var reader = command.ExecuteReader();
+            if (reader.HasRows)
             {
+                reader.Read();
+                User.applicationUser.id = reader.GetInt32(0);
                 this.Hide();//Обращемся к текущему окну и скрываем его
                 Menu M = new Menu();
                 M.Show();
                 DB.closeConnection();
             }
             else
-                MessageBox.Show("Хуйня");
-        }
-
-        public string getUserId()
-        {
-            return userNameField.Text;
+                MessageBox.Show("Аккаунт не найден");
         }
     }
 }  
