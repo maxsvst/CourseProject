@@ -33,7 +33,7 @@ namespace CourseProj
             {
                 userNameField.ForeColor = Color.Gray;
                 userNameField.Text = "Логин";
-             }
+            }
         }
 
         private void passwordField_Enter(object sender, EventArgs e)
@@ -65,7 +65,7 @@ namespace CourseProj
 
         private void createAccountLabel_MouseEnter(object sender, EventArgs e)
         {
-           createAccountLabel.ForeColor = Color.Black;
+            createAccountLabel.ForeColor = Color.Black;
         }
 
         private void createAccountLabel_MouseLeave(object sender, EventArgs e)
@@ -75,7 +75,7 @@ namespace CourseProj
 
         public void Login_Click(object sender, EventArgs e)
         {
-            
+
             string userLogin = userNameField.Text;
 
             DataTable table = new DataTable();
@@ -86,7 +86,7 @@ namespace CourseProj
             command.Parameters.Add("@pF", MySqlDbType.VarChar).Value = passwordField.Text;
             command.Parameters.Add("@nU", MySqlDbType.VarChar).Value = userNameField.Text;
 
-            
+
             adapter.SelectCommand = command;
             adapter.Fill(table);
             DB.openConnection();
@@ -104,5 +104,4 @@ namespace CourseProj
                 MessageBox.Show("Аккаунт не найден");
         }
     }
-}  
-
+}

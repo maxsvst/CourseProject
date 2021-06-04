@@ -61,7 +61,7 @@ namespace CourseProj
         {
             dataBase DB = new dataBase();
 
-            MySqlCommand command = new MySqlCommand("INSERT INTO `operations` (`money_type`, `type`, `sum`, `date`, `category`, `comment`) VALUES (@money_type, @type, @sum, @date, @category, @comment);", DB.getConnection());
+            MySqlCommand command = new MySqlCommand("INSERT INTO `operations` (`money_type`, `type`, `sum`, `date`, `category`, `comment`,`user_id`) VALUES (@money_type, @type, @sum, @date, @category, @comment, @user_id);", DB.getConnection());
 
             if (cardCheck.Checked == true)
                 command.Parameters.Add("@money_type", MySqlDbType.VarChar).Value = "card";
@@ -85,23 +85,25 @@ namespace CourseProj
             command.Parameters.Add("@date", MySqlDbType.VarChar).Value = dateField.Value.ToShortDateString();
             command.Parameters.Add("@category", MySqlDbType.VarChar).Value = sourceField.Text;
             command.Parameters.Add("@comment", MySqlDbType.VarChar).Value = commentField.Text;
+            command.Parameters.Add("@user_id", MySqlDbType.VarChar).Value = User.applicationUser.id;
 
-            if (sum_check) { 
-            DB.openConnection();
-
-            if (command.ExecuteNonQuery() == 1)
+            if (sum_check && Convert.ToDouble(sumField.Text)>0)
             {
-                MessageBox.Show("Доход был успешно добавлен");
+                DB.openConnection();
 
-            }
-            else
-                MessageBox.Show("Доход добавлен не был");
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("Доход был успешно добавлен");
 
-            DB.closeConnection();
+                }
+                else
+                    MessageBox.Show("Доход добавлен не был");
 
-            this.Hide();//Обращемся к текущему окну и скрываем его
-            Menu LF = new Menu();
-            LF.Show();
+                DB.closeConnection();
+
+                this.Hide();//Обращемся к текущему окну и скрываем его
+                Menu LF = new Menu();
+                LF.Show();
             }
             else
             {
@@ -113,13 +115,13 @@ namespace CourseProj
         private void cardCheck_CheckedChanged(object sender, EventArgs e)
         {
             if (cardCheck.Checked == true)
-            cashCheck.Checked = false;
+                cashCheck.Checked = false;
         }
 
         private void cashCheck_CheckedChanged(object sender, EventArgs e)
         {
             if (cashCheck.Checked == true)
-            cardCheck.Checked = false;
+                cardCheck.Checked = false;
         }
     }
 }
